@@ -1,0 +1,56 @@
+.HomeAdmin{
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    height: 100vh;
+
+}
+.HomeAdmin h2{
+    font-size:48px;
+    padding-bottom:0;
+}
+.opciones{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    min-width: 1000px;
+    min-height: 700px;
+    gap:15px;
+}
+.opciones button{
+    min-width: 250px;
+    height:50px;
+}
+.button-container{
+    display:flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: bold;
+    justify-content:center;
+    align-items:center;
+}
+.button{
+    width: 200px;
+    height: 200px;
+    border: 1px solid blueviolet;
+    border-radius:50%;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+   
+    cursor: pointer;
+    
+}
+.button:hover{
+    background-color: rgb(89, 92, 183);
+    color:white;
+}
+.icon{
+    font-size: 80px;
+}
