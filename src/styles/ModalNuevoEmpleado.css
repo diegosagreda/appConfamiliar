@@ -14,11 +14,10 @@
 }
 .overlay-none{
     display: none;
-    
 }
 .contenedor-inf-estudiante{
     width:700px;
-    height: 80vh;
+    height: 70vh;
     background: #fff;
     position:relative;
     border-radius: 5px;

@@ -44,7 +44,7 @@ export default function Login() {
     <div>
 
     <form className='formulario_login'>
-        <img src={Logo} alt="" />
+
         <h1>Iniciar Sesión</h1>
         <label>Usuario</label>
         <input className='input-datos' type="text" ref={usuarioo}></input>
