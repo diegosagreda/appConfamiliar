@@ -8,7 +8,7 @@ import ModalInformacionEmpleado from '../modals/ModalInformacionEmpleado';
 import ModalRetroalimentacion from '../modals/ModalRetroalimentacion';
 
 const TablaEmpleados = () => {
-    const {empleados,setArea} = useContext(AppContext);
+    const {empleados,setArea,areas} = useContext(AppContext);
     const {eliminarEmpleado} = PeticionesApi();
     const[modal, abrirModal, cerrarModal]=useModal(false);
     const[modal1, abrirModal1, cerrarModal1]=useModal(false);
@@ -32,6 +32,13 @@ const TablaEmpleados = () => {
         setArea(empleado);
         abrirModal2();
     }
+    const getArea = (id) =>{
+        let are = areas.filter(area => area.idarea === id);
+        if(are.length > 0){
+            return are[0].nombre;
+        }
+        return "";
+      }
     
  
   return (
@@ -46,9 +53,10 @@ const TablaEmpleados = () => {
                     <tr>
                         <th>Id</th>
                         <th>Nombres</th>
-                        <th>Telefono</th>
+                        <th>Teléfono</th>
                         <th>Rol</th>
-                        <th width='300'>Accion</th>
+                        <th>Area</th>
+                        <th width='300'>Acción</th>
                     </tr>
                 </thead>
             
@@ -60,12 +68,16 @@ const TablaEmpleados = () => {
                         <td>{empleado.telefono}</td>
                         <td>{empleado.rol}</td>
                         <td>
+                            {getArea(empleado.idarea)}
+                        </td>
+                        <td>
                             <button onClick={() => handleEditar(empleado.cedula)}>Editar</button>
                             <button onClick={() => handleConsultar(empleado.cedula)}>Consultar</button>
                             <button onClick={() => handleEliminar(empleado.cedula)}>Borrar</button>
                             <button onClick={() => handleAnotacion(empleado.cedula)}>Observación</button>
           
                         </td>
+                        
                     </tr>
                     ))}
                 </tbody>

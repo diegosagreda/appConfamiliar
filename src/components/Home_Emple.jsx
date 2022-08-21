@@ -7,6 +7,7 @@ import { AppContext } from '../context/AppContext';
 import {PeticionesApi} from '../helpers/PeticionesApi';
 import ModalInformacionEmpleado from '../modals/ModalInformacionEmpleado'
 import ModalVerObservaciones from '../modals/ModalVerObservaciones';
+import ModalVerObserEmple from '../modals/ModalVerObserEmple';
 
 const Home_Emple = () => {
     const {setLogueado,usuario,areas,setArea} = useContext(AppContext);
@@ -31,7 +32,7 @@ const Home_Emple = () => {
   return (
     <div className='HomeArea'>
         {modal? <ModalInformacionEmpleado cerrarModal={cerrarModal}/>:null}
-        {modal1? <ModalVerObservaciones cerrarModal={cerrarModal1}/>:null}
+        {modal1? <ModalVerObserEmple cerrarModal={cerrarModal1}/>:null}
  
       
       <h2>Empleado Area {getArea(usuario[0].idarea)}</h2>
