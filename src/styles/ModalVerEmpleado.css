@@ -15,8 +15,8 @@
     display: none;
 }
 .contenedor-crearParcelador{
-    width:90rem;
-    height: 80vh;
+    width:80rem;
+    height: 75vh;
     background: rgb(212, 209, 209);
     position:relative;
     border-radius: 2rem;
