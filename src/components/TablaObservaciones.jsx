@@ -8,7 +8,7 @@ import {PeticionesApi} from '../helpers/PeticionesApi';
 
 const TablaObservaciones = () => {
 
-  const {observaciones,setObservacion} = useContext(AppContext);
+  const {observaciones,setObservacion,usuario} = useContext(AppContext);
   const {eliminarObservacion} = PeticionesApi();
   const[modal, abrirModal, cerrarModal]=useModal(false);
 
@@ -38,6 +38,7 @@ const TablaObservaciones = () => {
                         <th>Id</th>
                         <th>Observacion</th>
                         <th width='150'>Accion</th>
+                      
                     </tr>
                 </thead>
             
@@ -46,6 +47,7 @@ const TablaObservaciones = () => {
                     <tr>
                         <td>{o.cedula}</td>
                         <td>{o.nota}</td>
+                     
                         <td>
                        
                             <button onClick={() => handleEditar(o.idobservacion)}>Editar</button>

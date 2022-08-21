@@ -6,6 +6,7 @@ import {AppContext} from "./context/AppContext";
 import Home_Login from './components/Home_Login.jsx'
 import Home_Admin from './components/HomeAdmin';
 import Home_Area from './components/Home_Area.jsx';
+import Home_Emple from './components/Home_Emple';
 
 
 function App() {
@@ -16,20 +17,20 @@ function App() {
     <div className="App">
         {
           logueado?
-          (
-            empleado.rol === 'administrador'?
+         
               <BrowserRouter>
                 <Routes>
+                    {empleado.rol === 'administrador' && 
                     <Route exact path='/homeAdmin' element={<Home_Admin/>}/>
-                </Routes>
-              </BrowserRouter>
-              :
-              <BrowserRouter>
-                <Routes>
+                    }
+                    {empleado.rol === 'gerente' && 
                     <Route exact path='/homeArea' element={<Home_Area/>}/>
+                    }
+                     {empleado.rol === 'empleado' && 
+                    <Route exact path='/homeEmple' element={<Home_Emple/>}/>
+                    }
                 </Routes>
               </BrowserRouter>
-           )
               :
               <BrowserRouter>
                 <Routes>

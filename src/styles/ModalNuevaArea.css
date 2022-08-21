@@ -71,5 +71,20 @@ textarea{
     display: flex;
     justify-content: space-between;
 }
+.btn-inf-estudiante button:first-child{
+    background-color:rgb(136, 22, 241);
+    border:none;
+    color: white;
+    padding:10px 23px;
+    min-width: 100px;
+    font-weight: bold;
+}
+.btn-inf-estudiante button:nth-child(2){
+    background-color:rgb(232, 148, 13);
+    border:none;
+    color: white;
+    padding:10px 23px;
+    font-weight: bold;
+}
 
 /* Datos institucion */

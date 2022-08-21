@@ -3,10 +3,10 @@ import { AppContext } from "../context/AppContext";
 
 export const PeticionesApi = () => {
 
-    //let production = 'https://api-colegiorafaelreyes.herokuapp.com';
+    let production = 'https://api-rest-confamiliar.herokuapp.com';
     //let production = 'http://localhost:3050';
     //let production = 'http://192.168.43.105:3080';
-    let production = 'http://192.168.1.14:3080';
+    //let production = 'http://192.168.1.14:3080';
     
     const {setAreas,setEmpleados ,areas,setUsuario,usuario,setObservaciones,empleados} = useContext(AppContext);
     
@@ -260,6 +260,13 @@ export const PeticionesApi = () => {
                 const resp = await respuesta.json()
                  //Filtro de area
                  if(usuario.length > 0){
+                    //Cargamos observaciones de un solo empleado
+                    if(usuario[0].rol === 'empleado'){
+                        let obser = resp.filter(em => em.idarea == usuario[0].idarea && em.cedula == usuario[0].cedula);
+                        setObservaciones(obser);
+                        return
+                    }
+
                     let obser = resp.filter(em => em.idarea == usuario[0].idarea);
                     setObservaciones(obser);
                     return

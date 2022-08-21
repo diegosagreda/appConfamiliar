@@ -2,10 +2,12 @@ import React,{useState,useContext} from 'react'
 import '../styles/ModalRetroalimentacion.css';
 import {AppContext} from '../context/AppContext';
 import {PeticionesApi} from '../helpers/PeticionesApi';
+import {BallTriangle} from 'react-loader-spinner' 
 
 const ModalRetroalimentacion = ({cerrarModal}) => {
 
-  const {area,observacion,setObservacion} = useContext(AppContext);
+  const {area,observacion,setObservacion,usuario} = useContext(AppContext);
+  const [loader, setloader] = useState(false);
   const {registrarObservacion,actualizarObservacion,cargarObservaciones} = PeticionesApi();
   const [dataRetroalimentacion, setdataRetroalimentacion] = useState({
     cedula:observacion.cedula ? observacion.cedula : area.cedula,
@@ -25,6 +27,7 @@ const ModalRetroalimentacion = ({cerrarModal}) => {
     });
 }
 const handleGuardar = async(e)=>{
+  setloader(true);
     e.preventDefault();
     if(dataRetroalimentacion.nota){
       if(observacion.cedula){
@@ -41,7 +44,7 @@ const handleGuardar = async(e)=>{
       alert('Campos Vacio')
     }
     await cargarObservaciones();
-    
+    setloader(false);
 }
   return (
     <div className="inf-estudiante">                 
@@ -74,12 +77,17 @@ const handleGuardar = async(e)=>{
 
                 </div>
 
-              
-                  <div className="btn-inf-estudiante">
-                      <button  onClick={handleGuardar}>Guardar</button>
-                      <button  onClick={handleCerrarModal}>Cancelar</button>
-                  </div>
              
+                
+                <div className="btn-inf-estudiante">
+                    
+                      <button  onClick={handleGuardar}>
+                        {loader? <BallTriangle color='#fff' height={20} width={20}/>:'Guardar'}
+                      </button>
+                      <button  onClick={handleCerrarModal}>Cancelar</button>
+                </div>
+                
+                 
             
             </main>                
 

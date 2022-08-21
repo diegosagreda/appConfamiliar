@@ -3,11 +3,13 @@ import '../styles/ModalNuevoEmpleado.css';
 
 import {PeticionesApi} from '../helpers/PeticionesApi';
 import {AppContext} from '../context/AppContext';
+import {BallTriangle} from 'react-loader-spinner' 
 
 const ModalNuevoEmpleado = ({cerrarModal}) => {
 
     const {registrarEmpleado,actualizarEmpleado,cargarEmpleados,buscarEmpleado} = PeticionesApi();
     const {area,setArea,areas,usuario} = useContext(AppContext);
+    const [loader, setloader] = useState(false);
     useEffect(()=>{
         if(usuario.length > 0){
             setdataEmpleado({
@@ -48,6 +50,7 @@ const handleChange = (e)=>{
     });
 }
 const handleGuardar = async (e)=>{
+    setloader(true);
     //Validacion cc repetida
     e.preventDefault();
         if(dataEmpleado.cedula &&dataEmpleado.nombre && dataEmpleado.telefono && dataEmpleado.email &&
@@ -74,7 +77,7 @@ const handleGuardar = async (e)=>{
         }else{
             alert("Campos vacios")
         }
-   
+        setloader(false);
 }
 
   return (
@@ -228,7 +231,9 @@ const handleGuardar = async (e)=>{
                     />
                 </div>
                 <div className="btn-inf-estudiante">
-                    <button  onClick={handleGuardar}>Guardar</button>
+                    <button  onClick={handleGuardar}>
+                        {loader? <BallTriangle color='#fff' height={20} width={20}/>:'Guardar'}
+                    </button>
                 </div>
             
             </main>                

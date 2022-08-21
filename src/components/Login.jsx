@@ -3,8 +3,7 @@ import Logo from "../images/logo.png";
 import {useNavigate} from 'react-router-dom';
 import {PeticionesApi} from '../helpers/PeticionesApi';
 import { AppContext } from '../context/AppContext';
-
-import {Circles} from 'react-loader-spinner' 
+import {BallTriangle} from 'react-loader-spinner' 
 
 
 export default function Login() {
@@ -17,8 +16,10 @@ export default function Login() {
 
   const {setLogueado,setEmpleado} = useContext(AppContext);
 
+
   const ingresar = async(e) =>{
     e.preventDefault();
+    setloader(true);
     const empleado = await iniciarSesion(usuarioo.current.value,contraseña.current.value);
     if(empleado.rol){
       setEmpleado(empleado)
@@ -28,11 +29,14 @@ export default function Login() {
         navigate('/homeAdmin') 
       }else if(empleado.rol === "gerente"){
         navigate('/homeArea')
+      }else if(empleado.rol === "empleado"){
+        navigate('/homeEmple')
       }
     }else{
       setLogueado(false);
       alert('Credenciales incorrectas')
     } 
+    setloader(false)
   }
   
   
@@ -50,7 +54,7 @@ export default function Login() {
 
         <div className='opc-formulario'>
             <button  type='submit' onClick={ingresar}>
-              {loader? <Circles color='#fff' height={20} width={20}/>:'Ingresar'}
+              {loader? <BallTriangle color='#fff' height={30} width={30}/>:'Ingresar'}
             </button>
         
 

@@ -5,7 +5,7 @@ export const AppContext=createContext();
 export const DataProvider=({children})=>{
 
   const [logueado, setLogueado] = useState(false);
-  const [empleado, setEmpleado] = useState();
+  const [empleado, setEmpleado] = useState({});
   const [areas,setAreas] = useState([]);
   const [area,setArea] = useState({});
   const [usuario,setUsuario] = useState({});

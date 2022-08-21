@@ -2,16 +2,19 @@ import React,{useState,useContext} from 'react'
 import '../styles/ModalNuevaArea.css';
 import { PeticionesApi } from '../helpers/PeticionesApi';
 import {AppContext} from '../context/AppContext';
+import {BallTriangle} from 'react-loader-spinner' 
 
 const ModalNuevaArea = ({cerrarModal}) => {
     const {registrarArea,cargarAreas,actualizarArea} = PeticionesApi();
     const {area,setArea} = useContext(AppContext);
+    const [loader, setloader] = useState(false);
 
     const [dataArea, setdataArea] = useState({
         nombre:area.nombre?area.nombre:"",
         descripcion:area.descripcion?area.descripcion:""
       })
       const handleGuardar = async(e)=>{
+        setloader(true);
         e.preventDefault();
         if(dataArea.nombre && dataArea.descripcion){
           if(area.nombre){
@@ -27,6 +30,7 @@ const ModalNuevaArea = ({cerrarModal}) => {
         }
         await cargarAreas();
         cerrarModal();
+        setloader(false);
     }
     const handleCerrarModal=(e)=>{
         e.preventDefault();
@@ -74,7 +78,9 @@ const ModalNuevaArea = ({cerrarModal}) => {
 
                 </div>
                 <div className="btn-inf-estudiante">
-                    <button  onClick={handleGuardar}>Guardar</button>
+                    <button  onClick={handleGuardar}>
+                      {loader? <BallTriangle color='#fff' height={20} width={20}/>:'Guardar'}
+                    </button>
                     <button  onClick={handleCerrarModal}>Cancelar</button>
                 </div>
             
