@@ -18,7 +18,7 @@ const Home_Area = () => {
   const[modal2, abrirModal2, cerrarModal2]=useModal(false)
 
   const {setLogueado,usuario,areas} = useContext(AppContext);
-  const {cargarEmpleados} = PeticionesApi();
+  const {cargarEmpleados,cargarObservaciones} = PeticionesApi();
   const handleCerrarSesion =(e)=>{
     e.preventDefault();
     setLogueado(false);
@@ -52,7 +52,7 @@ const Home_Area = () => {
           Nuevo Empleado
         </div>
         <div className="button-container">
-            <div className="button" onClick={() =>abrirModal1()}>
+            <div className="button" onClick={() =>{abrirModal1();cargarObservaciones()}}>
                 <FontAwesomeIcon className="icon" icon={faMessage} />
             </div>
             Observaciones empleados

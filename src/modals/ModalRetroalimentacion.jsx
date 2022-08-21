@@ -9,7 +9,8 @@ const ModalRetroalimentacion = ({cerrarModal}) => {
   const {registrarObservacion,actualizarObservacion,cargarObservaciones} = PeticionesApi();
   const [dataRetroalimentacion, setdataRetroalimentacion] = useState({
     cedula:observacion.cedula ? observacion.cedula : area.cedula,
-    nota:observacion.nota ? observacion.nota : ''
+    nota:observacion.nota ? observacion.nota : '',
+    idarea:observacion.idarea ? observacion.idarea : area.idarea
   })
 
   const handleCerrarModal=(e)=>{

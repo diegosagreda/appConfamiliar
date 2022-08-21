@@ -15,7 +15,7 @@ import {faPersonCirclePlus,faTableCells,faSquare,faUsers,faArrowRightFromBracket
 const HomeAdmin = () => {
 
   const {setLogueado,setEmpleados} = useContext(AppContext);
-  const {cargarEmpleados} = PeticionesApi();
+  const {cargarEmpleados,cargarObservaciones} = PeticionesApi();
 
   const[modal, abrirModal, cerrarModal]=useModal(false)
   const[modal1, abrirModal1, cerrarModal1]=useModal(false)
@@ -64,7 +64,7 @@ const HomeAdmin = () => {
           Empleados
         </div>
         <div className="button-container">
-            <div className="button" onClick={() =>abrirModal4()}>
+            <div className="button" onClick={() =>{abrirModal4();cargarObservaciones()}}>
                 <FontAwesomeIcon className="icon" icon={faMessage} />
             </div>
             Observaciones empleados

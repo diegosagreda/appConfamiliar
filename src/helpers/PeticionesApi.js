@@ -6,9 +6,9 @@ export const PeticionesApi = () => {
     //let production = 'https://api-colegiorafaelreyes.herokuapp.com';
     //let production = 'http://localhost:3050';
     //let production = 'http://192.168.43.105:3080';
-    let production = 'http://192.168.1.19:3080';
+    let production = 'http://192.168.1.14:3080';
     
-    const {setAreas,setEmpleados ,areas,setUsuario,usuario,setObservaciones} = useContext(AppContext);
+    const {setAreas,setEmpleados ,areas,setUsuario,usuario,setObservaciones,empleados} = useContext(AppContext);
     
     const iniciarSesion = async (usuario, contraseña) => {
         console.log(usuario,contraseña);        
@@ -256,12 +256,17 @@ export const PeticionesApi = () => {
     const cargarObservaciones = async()=>{
         try {
             const respuesta = await fetch(production + '/observaciones');
-
             if (respuesta.status === 200) {
                 const resp = await respuesta.json()
+                 //Filtro de area
+                 if(usuario.length > 0){
+                    let obser = resp.filter(em => em.idarea == usuario[0].idarea);
+                    setObservaciones(obser);
+                    return
+                }
                 setObservaciones(resp)
             } else {
-                setAreas([]);
+                setObservaciones([]);
             }
         } catch (error) {
             console.log("Algo salio mal al cargar observaciones")
