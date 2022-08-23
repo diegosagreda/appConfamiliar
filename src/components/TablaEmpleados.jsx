@@ -56,7 +56,7 @@ const TablaEmpleados = () => {
                         <th>Teléfono</th>
                         <th>Rol</th>
                         <th>Area</th>
-                        <th width='300'>Acción</th>
+                        <th width='280'>Acción</th>
                     </tr>
                 </thead>
             

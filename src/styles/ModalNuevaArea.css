@@ -4,7 +4,7 @@
     position: fixed;
     top:0;
     left:0;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     display: flex;  
     justify-content: center;
@@ -22,13 +22,15 @@
     background: white;
     position:relative;
     border-radius: 5px;
-    padding: 1rem; 
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     z-index: 1001;
-   
-   
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 .encab-modal{
     display: flex;

@@ -9,6 +9,12 @@ import ModalVerObservaciones from '../modals/ModalVerObservaciones';
 import {AppContext} from '../context/AppContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {PeticionesApi} from '../helpers/PeticionesApi';
+import LogoEmpleado from '../icons/user.png'
+import Area from '../icons/area.png'
+import Areas from '../icons/areas.png'
+import Empleados from '../icons/empleados.png'
+import Obser from '../icons/obser.png'
+
 
 import {faPersonCirclePlus,faTableCells,faSquare,faUsers,faArrowRightFromBracket,faMessage} from '@fortawesome/free-solid-svg-icons';
 
@@ -41,31 +47,36 @@ const HomeAdmin = () => {
       <div className="opciones">
         <div className="button-container">
           <div className="button" onClick={() =>abrirModal2()}>
-              <FontAwesomeIcon className="icon" icon={faSquare} />
+              {/* <FontAwesomeIcon className="icon" icon={faSquare} /> */}
+              <img src={Area} alt="" />
           </div>
           Registrar Area
         </div>
         <div className="button-container">
           <div className="button" onClick={() =>abrirModal3()}>
-              <FontAwesomeIcon className="icon" icon={faTableCells} />
+              {/* <FontAwesomeIcon className="icon" icon={faTableCells} /> */}
+              <img src={Areas} alt="" />
           </div>
           Ver Areas
         </div>
         <div className="button-container">
           <div className="button" onClick={() =>abrirModal()}>
-              <FontAwesomeIcon className="icon" icon={faPersonCirclePlus} />
+              {/* <FontAwesomeIcon className="icon" icon={faPersonCirclePlus} /> */}
+              <img src={LogoEmpleado} alt="" />
           </div>
           Nuevo Empleado
         </div>
         <div className="button-container">
           <div className="button" onClick={() =>{abrirModal1(); setEmpleados([]); cargarEmpleados()}}>
-              <FontAwesomeIcon className="icon" icon={faUsers} />
+              {/* <FontAwesomeIcon className="icon" icon={faUsers} /> */}
+              <img src={Empleados} alt="" />
           </div>
           Empleados
         </div>
         <div className="button-container">
             <div className="button" onClick={() =>{abrirModal4();cargarObservaciones()}}>
-                <FontAwesomeIcon className="icon" icon={faMessage} />
+               {/*  <FontAwesomeIcon className="icon" icon={faMessage} /> */}
+               <img src={Obser} alt="" />
             </div>
             Observaciones empleados
         </div>

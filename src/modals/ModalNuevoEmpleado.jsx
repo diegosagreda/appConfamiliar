@@ -41,6 +41,7 @@ const ModalNuevoEmpleado = ({cerrarModal}) => {
 
 const handleCerrarModal=(e)=>{
         e.preventDefault();
+        setArea({});
         cerrarModal();       
 }
 const handleChange = (e)=>{

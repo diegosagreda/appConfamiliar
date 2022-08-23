@@ -1,11 +1,11 @@
-.TablaVerEstudiante{    
+.TablaVerEstudiante{
     height: 25rem;
-    border-radius: 1rem;
-    width: 75rem;
-    overflow-y: scroll;     
-    background-color: aliceblue; 
-    border: solid 2px rgb(178, 185, 187); 
 
+    width: 75rem;
+    overflow-y: scroll;
+    background-color: aliceblue;
+    border: solid 2px rgb(178, 185, 187);
+   
 }
 
 .tabla-interna table {   
@@ -17,8 +17,9 @@
   
 }
 
-.tabla-interna tr, th{
+.tabla-interna tr, th,td{
     padding: 10px;
+    border: 1px solid black;
 }
 
 .tabla-interna thead{   

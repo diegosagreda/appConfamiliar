@@ -5,11 +5,14 @@
     justify-content:center;
     align-items:center;
     height: 100vh;
+    background: rgb(64,58,180);
+    background: linear-gradient(225deg, rgba(64,58,180,1) 5%, rgba(17,18,23,1) 100%, rgba(252,176,69,1) 100%);
 
 }
 .HomeArea h2{
     font-size:48px;
     padding-bottom:0;
+    color:white;
 }
 .opciones{
     display: flex;
@@ -49,8 +52,8 @@
     transition-duration: 0.4s;
     
 }
-.button:hover{
-    background-color: rgb(89, 92, 183);
+.HomeArea .button:hover{
+    background-color: blueviolet;
     color:white;
 }
 .icon{

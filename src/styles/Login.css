@@ -5,13 +5,17 @@
     flex-direction: column;
     gap:.8rem;
     padding: 1rem 3rem 3rem 3rem;
-    background-color: rgb(57, 80, 157); 
-    border-radius: 3rem;
+    background-color: rgb(57, 80, 157);
+    border-radius: 5px;
     font-size: 1.7rem;
     font-weight: 500;
     align-items: center;
     color: white;
-    box-shadow: 0 13px 20px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);  
+    box-shadow: 0 13px 20px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
 }
 
 @media(min-width: 480px){
@@ -21,15 +25,19 @@
 }
 .input-datos{
     padding: 1rem;
-    border-radius: 3rem;
+    border-radius: 1rem;
     width: 90%;
     border: solid 1px gray;
     border-bottom: 4cm;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
 }
 .formulario_login input{
     background-color: rgb(252, 240, 240);
     height: 1.5rem;
-    font-size: 1.7rem;
+    font-size: 1.2rem;
 }
 .formulario_login button{
     margin: 0, 4rem;
