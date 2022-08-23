@@ -6,7 +6,7 @@ import {BallTriangle} from 'react-loader-spinner'
 
 const ModalRetroalimentacion = ({cerrarModal}) => {
 
-  const {area,observacion,setObservacion,usuario} = useContext(AppContext);
+  const {area,observacion,setObservacion,usuario,setArea} = useContext(AppContext);
   const [loader, setloader] = useState(false);
   const {registrarObservacion,actualizarObservacion,cargarObservaciones} = PeticionesApi();
   const [dataRetroalimentacion, setdataRetroalimentacion] = useState({
@@ -34,9 +34,12 @@ const handleGuardar = async(e)=>{
         await actualizarObservacion(observacion.idobservacion,dataRetroalimentacion);
         alert('Retroalimentación Actualizada')
         setObservacion({});
+        setArea({});
         cerrarModal();
       }else{
         await registrarObservacion(dataRetroalimentacion);
+        setObservacion({});
+        setArea({});
         cerrarModal();
       }
       
