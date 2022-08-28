@@ -5,14 +5,13 @@
     justify-content:center;
     align-items:center;
     height: 100vh;
-    background: rgb(64,58,180);
-    background: linear-gradient(225deg, rgba(64,58,180,1) 5%, rgba(17,18,23,1) 100%, rgba(252,176,69,1) 100%);
+  
 
 }
 .HomeAdmin h2{
     font-size:48px;
     padding-bottom:0;
-    color: white;
+   
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .opciones{
@@ -36,12 +35,12 @@
     justify-content:center;
     align-items:center;
     gap: 20px;
-    color: white;
+   
 }
-.button{
+.HomeAdmin .button{
     width: 160px;
     height: 160px;
-    border: 1px solid blueviolet;
+    border: 1px solid blue;
     border-radius:50%;
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
@@ -54,7 +53,7 @@
     
 }
 .HomeAdmin .button:hover{
-    background-color: blueviolet;
+    background-color: blue;
     color:white;
     cursor: pointer;
     transform: scale(1.1,1.1);
